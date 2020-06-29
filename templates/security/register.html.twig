@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register !{% endblock %}
+
+{% block body %}
+
+    <div class="form-group">
+                    {{ form_start(form) }}
+
+                    {{ form_widget(form.username) }}
+                    {{ form_widget(form.password) }}
+
+                    {{ form_end(form) }}
+    </div>
+{% endblock %}
