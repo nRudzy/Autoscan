@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import Items from './components/Items.js';
+import Left from './components/Left/Left'
+import Right from './components/Right/Right'
 
 
 class App extends React.Component {
@@ -13,30 +13,24 @@ class App extends React.Component {
         };
     }
 
-    componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/posts/')
-            .then(response => response.json())
-            .then(entries => {
-                this.setState({
-                    entries
-                });
-            });
-    }
 
     render() {
         return (
-            <div className="row">
-                {this.state.entries.map(
-                    ({ id, title, body }) => (
-                        <Items
-                            key={id}
-                            title={title}
-                            body={body}
-                        >
-                        </Items>
-                    )
-                )}
+            <div class="container py-5 px-4">
+                
+                <div class="row rounded-lg overflow-hidden shadow">
+
+                <div class="col-5 px-0">
+                    <div class="bg-white">
+                        <Left/>
+                    </div>
+                </div>
+                
+                <Right/>
+                
+                </div>
             </div>
+          
         );
     }
 }
